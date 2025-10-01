@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brassoccer - Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/start-menu.css">
+    <link rel="stylesheet" href="css/modal-save.css">
+    <link rel="stylesheet" href="css/game-screen.css">
+</head>
+<body>
+    <div id="app">
+        <div id="login-container" class="auth-container">
+            <h2>Login</h2>
+            <input type="text" id="login-username" placeholder="Usuário">
+            <input type="password" id="login-password" placeholder="Senha">
+            <button onclick="login()">Entrar</button>
+            <p>Não tem conta? <a href="#" onclick="showRegister()">Cadastre-se</a></p>
+            <div id="login-error" class="error"></div>
+        </div>
+        <div id="register-container" class="auth-container" style="display:none;">
+            <h2>Cadastro</h2>
+            <input type="text" id="register-username" placeholder="Usuário">
+            <input type="password" id="register-password" placeholder="Senha">
+            <button onclick="register()">Cadastrar</button>
+            <p>Já tem conta? <a href="#" onclick="showLogin()">Entrar</a></p>
+            <div id="register-error" class="error"></div>
+        </div>
+        <div id="dashboard" style="display:none;">
+            <h2>Bem-vindo, <span id="user-name"></span>!</h2>
+            <button onclick="logout()">Sair</button>
+            <h3>Seus Saves</h3>
+            <ul id="saves-list"></ul>
+            <button onclick="createSave()">Novo Save</button>
+        </div>
+
+        <!-- Tela inicial de escolha de técnico e time -->
+        <div id="start-menu" style="display:none;">
+            <h2>Configuração Inicial</h2>
+            <form id="coach-form" autocomplete="off">
+                <div class="input-group">
+                    <label for="coach-name">Nome do Técnico</label>
+                    <input type="text" id="coach-name" maxlength="24" placeholder="Digite o nome do técnico">
+                </div>
+                <div class="input-group">
+                    <label for="coach-avatar">Avatar do Técnico</label>
+                    <select id="coach-avatar">
+                        <option value="avatar1">👨‍🦱 Clássico</option>
+                        <option value="avatar2">👨‍🦰 Jovem</option>
+                        <option value="avatar3">🧔 Experiente</option>
+                        <option value="avatar4">👩‍🦱 Feminino</option>
+                        <option value="avatar5">🧑‍🦲 Careca</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="coach-nation">Nacionalidade</label>
+                    <select id="coach-nation">
+                        <option value="">Selecione</option>
+                        <option value="Brasil">🇧🇷 Brasil</option>
+                        <option value="Argentina">🇦🇷 Argentina</option>
+                        <option value="Portugal">🇵🇹 Portugal</option>
+                        <option value="Espanha">🇪🇸 Espanha</option>
+                        <option value="Itália">🇮🇹 Itália</option>
+                        <option value="França">🇫🇷 França</option>
+                        <option value="Alemanha">🇩🇪 Alemanha</option>
+                        <option value="Inglaterra">🇬🇧 Inglaterra</option>
+                        <option value="Uruguai">🇺🇾 Uruguai</option>
+                        <option value="Outros">🌎 Outros</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="coach-team">Time Inicial</label>
+                    <select id="coach-team">
+                        <option value="">Selecione</option>
+                        <option value="Flamengo">Flamengo</option>
+                        <option value="Palmeiras">Palmeiras</option>
+                        <option value="Corinthians">Corinthians</option>
+                        <option value="São Paulo">São Paulo</option>
+                        <option value="Grêmio">Grêmio</option>
+                        <option value="Internacional">Internacional</option>
+                        <option value="Atlético-MG">Atlético-MG</option>
+                        <option value="Santos">Santos</option>
+                        <option value="Vasco">Vasco</option>
+                        <option value="Botafogo">Botafogo</option>
+                        <option value="Cruzeiro">Cruzeiro</option>
+                        <option value="Bahia">Bahia</option>
+                        <option value="Fortaleza">Fortaleza</option>
+                        <option value="Athletico-PR">Athletico-PR</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="coach-logo">Logo do Time</label>
+                    <select id="coach-logo">
+                        <option value="logo1">🏆 Tradicional</option>
+                        <option value="logo2">⚽ Moderno</option>
+                        <option value="logo3">🦁 Animal</option>
+                        <option value="logo4">⭐ Estrela</option>
+                        <option value="logo5">🔥 Fogo</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="coach-tactic">Esquema Tático Inicial</label>
+                    <select id="coach-tactic">
+                        <option value="4-4-2">4-4-2</option>
+                        <option value="4-3-3">4-3-3</option>
+                        <option value="3-5-2">3-5-2</option>
+                        <option value="4-2-3-1">4-2-3-1</option>
+                        <option value="5-3-2">5-3-2</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="coach-exp">Experiência do Técnico</label>
+                    <select id="coach-exp">
+                        <option value="Iniciante">Iniciante</option>
+                        <option value="Intermediário">Intermediário</option>
+                        <option value="Veterano">Veterano</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <button type="button" id="btn-confirm">Confirmar</button>
+                    <button type="button" id="btn-load" class="secondary-button">Carregar Dados</button>
+                </div>
+                <div id="coach-error" class="error" style="display:none;"></div>
+            </form>
+            <div id="coach-summary" class="success" style="display:none; margin-top:18px;"></div>
+        </div>
+        <!-- Tela do jogo (inicialmente oculta, preenchida via JS) -->
+        <div id="game-screen" style="display:none;">
+            <header id="game-header" class="game-header">
+                <div class="header-team">
+                    <span id="header-team-logo" class="team-logo">🏆</span>
+                    <span id="header-team-name" class="team-name">Time</span>
+                </div>
+                <div class="header-info">
+                    <span id="header-finance" class="header-finance">$ 0</span>
+                    <span id="header-reputation" class="header-reputation">Reputação: 0</span>
+                    <span id="header-date" class="header-date">01/01/2025</span>
+                    <span id="header-round" class="header-round">Rodada 1</span>
+                </div>
+            </header>
+            <nav id="game-menu" class="game-menu">
+                <button class="menu-btn" id="btn-menu-elenco">Elenco</button>
+                <button class="menu-btn" id="btn-menu-treinos">Treinos</button>
+                <button class="menu-btn" id="btn-menu-proximojogo">Próximo Jogo</button>
+                <button class="menu-btn" id="btn-menu-transferencias">Transferências</button>
+                <button class="menu-btn" id="btn-menu-tatica">Tática</button>
+                <button class="menu-btn" id="btn-menu-opcoes">Opções</button>
+            </nav>
+            <main id="game-main" class="game-main">
+                <section id="main-center" class="main-center">
+                    <!-- Conteúdo dinâmico: elenco, treinos, etc. -->
+                </section>
+                <aside id="main-aside" class="main-aside">
+                    <div class="aside-box" id="aside-next-match">
+                        <h4>Próximo Jogo</h4>
+                        <div id="aside-next-match-info"></div>
+                    </div>
+                    <div class="aside-box" id="aside-confidence">
+                        <h4>Confiança</h4>
+                        <div>Diretoria: <span id="aside-confidence-board">0%</span></div>
+                        <div>Torcida: <span id="aside-confidence-fans">0%</span></div>
+                    </div>
+                    <div class="aside-box" id="aside-news">
+                        <h4>Notícias</h4>
+                        <ul id="aside-news-list" class="news-list"></ul>
+                    </div>
+                    <div class="aside-box" id="aside-graph">
+                        <h4>Elenco por Posição</h4>
+                        <div id="aside-graph-bar" class="graph-bar"></div>
+                    </div>
+                    <div class="aside-box" id="aside-history">
+                        <h4>Últimos Jogos</h4>
+                        <ul id="aside-history-list" class="history-list"></ul>
+                    </div>
+                    <div class="aside-box" id="aside-notifications">
+                        <h4>Notificações</h4>
+                        <ul id="aside-notifications-list" class="notifications-list"></ul>
+                    </div>
+                    <button id="btn-avancar-semana" class="secondary-button">Avançar Semana</button>
+                </aside>
+            </main>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

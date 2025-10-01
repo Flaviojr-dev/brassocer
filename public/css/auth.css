@@ -1,0 +1,23 @@
+/* Estilos específicos para login e cadastro */
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input[type="text"], input[type="password"] {
+    padding: 14px 16px;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.3);
+    color: var(--white);
+    font-size: 1em;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: var(--primary-green);
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(0, 166, 80, 0.3);
+}
