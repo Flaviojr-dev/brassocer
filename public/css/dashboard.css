@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding: 10px;
 }
 
 .dashboard-header {
@@ -13,6 +14,7 @@
 .dashboard-header h1 {
     color: var(--gold);
     margin-bottom: 5px;
+    font-size: 1.8em;
 }
 
 #saves-list {
@@ -33,6 +35,7 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     cursor: pointer;
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    font-size: 1em;
 }
 
 #saves-list li:hover {
