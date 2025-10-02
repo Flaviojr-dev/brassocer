@@ -3,6 +3,8 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 600px;
+    margin: 0 auto;
 }
 
 input[type="text"], input[type="password"] {

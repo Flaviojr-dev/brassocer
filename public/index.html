@@ -18,7 +18,7 @@
             <input type="text" id="login-username" placeholder="Usuário">
             <input type="password" id="login-password" placeholder="Senha">
             <button onclick="login()">Entrar</button>
-            <p>Não tem conta? <a href="#" onclick="showRegister()">Cadastre-se</a></p>
+            <p>Não tem conta? <a href="#" style="color: green;" onclick="showRegister()">Cadastre-se</a></p>
             <div id="login-error" class="error"></div>
         </div>
         <div id="register-container" class="auth-container" style="display:none;">
@@ -26,7 +26,7 @@
             <input type="text" id="register-username" placeholder="Usuário">
             <input type="password" id="register-password" placeholder="Senha">
             <button onclick="register()">Cadastrar</button>
-            <p>Já tem conta? <a href="#" onclick="showLogin()">Entrar</a></p>
+            <p>Já tem conta? <a href="#" style="color: green;" onclick="showLogin()">Entrar</a></p>
             <div id="register-error" class="error"></div>
         </div>
         <div id="dashboard" style="display:none;">
