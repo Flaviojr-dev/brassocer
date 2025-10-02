@@ -1,0 +1,22 @@
+[
+  {"id":0,"nome":"Araxá","estadio":"Estádio Araxá","capacidade":12000,"ataque":65,"meio":64,"defesa":66,"overall":65,"escudoImage":"images/escudos/araxa.png"},
+  {"id":1,"nome":"Bangu","estadio":"Estádio Bangu","capacidade":15000,"ataque":67,"meio":63,"defesa":62,"overall":64,"escudoImage":"images/escudos/bangu.png"},
+  {"id":2,"nome":"Caxias","estadio":"Estádio Caxias","capacidade":18000,"ataque":66,"meio":66,"defesa":65,"overall":66,"escudoImage":"images/escudos/caxias.png"},
+  {"id":3,"nome":"Democrata","estadio":"Estádio Democrata","capacidade":9000,"ataque":62,"meio":60,"defesa":63,"overall":61,"escudoImage":"images/escudos/democrata.png"},
+  {"id":4,"nome":"Estrela","estadio":"Estádio Estrela","capacidade":14000,"ataque":68,"meio":67,"defesa":66,"overall":67,"escudoImage":"images/escudos/estrela.png"},
+  {"id":5,"nome":"Ferroviária","estadio":"Estádio Ferroviária","capacidade":10000,"ataque":63,"meio":62,"defesa":64,"overall":63,"escudoImage":"images/escudos/ferroviaria.png"},
+  {"id":6,"nome":"Guarani","estadio":"Estádio Brinco","capacidade":25000,"ataque":72,"meio":70,"defesa":69,"overall":70,"escudoImage":"images/escudos/guarani.png"},
+  {"id":7,"nome":"Horizonte","estadio":"Estádio Horizonte","capacidade":11000,"ataque":61,"meio":60,"defesa":60,"overall":60,"escudoImage":"images/escudos/horizonte.png"},
+  {"id":8,"nome":"Ipatinga","estadio":"Estádio Ipatinga","capacidade":13000,"ataque":64,"meio":63,"defesa":62,"overall":63,"escudoImage":"images/escudos/ipatinga.png"},
+  {"id":9,"nome":"Juventus","estadio":"Estádio Juventus","capacidade":9000,"ataque":59,"meio":58,"defesa":57,"overall":58,"escudoImage":"images/escudos/juventus.png"},
+  {"id":10,"nome":"Londrina","estadio":"Estádio do Café","capacidade":25000,"ataque":70,"meio":69,"defesa":68,"overall":69,"escudoImage":"images/escudos/londrina.png"},
+  {"id":11,"nome":"Maringá","estadio":"Estádio Willie Davids","capacidade":20000,"ataque":66,"meio":65,"defesa":65,"overall":65,"escudoImage":"images/escudos/maringa.png"},
+  {"id":12,"nome":"Nacional","estadio":"Estádio Nacional","capacidade":8000,"ataque":58,"meio":57,"defesa":59,"overall":58,"escudoImage":"images/escudos/nacional.png"},
+  {"id":13,"nome":"Operário","estadio":"Estádio Germano Kruger","capacidade":18000,"ataque":67,"meio":66,"defesa":66,"overall":66,"escudoImage":"images/escudos/operario.png"},
+  {"id":14,"nome":"Paulista","estadio":"Estádio Paulista","capacidade":15000,"ataque":63,"meio":62,"defesa":61,"overall":62,"escudoImage":"images/escudos/paulista.png"},
+  {"id":15,"nome":"Quissamã","estadio":"Estádio Quissamã","capacidade":7000,"ataque":55,"meio":56,"defesa":55,"overall":55,"escudoImage":"images/escudos/quissama.png"},
+  {"id":16,"nome":"Rio Branco","estadio":"Estádio Rio Branco","capacidade":12000,"ataque":60,"meio":61,"defesa":60,"overall":60,"escudoImage":"images/escudos/rio_branco.png"},
+  {"id":17,"nome":"Serrano","estadio":"Estádio Serrano","capacidade":8500,"ataque":57,"meio":56,"defesa":58,"overall":57,"escudoImage":"images/escudos/serrano.png"},
+  {"id":18,"nome":"Tupi","estadio":"Estádio Tupi","capacidade":10000,"ataque":62,"meio":61,"defesa":60,"overall":61,"escudoImage":"images/escudos/tupi.png"},
+  {"id":19,"nome":"União","estadio":"Estádio União","capacidade":9500,"ataque":59,"meio":60,"defesa":59,"overall":59,"escudoImage":"images/escudos/uniao.png"}
+]

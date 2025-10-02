@@ -1,3 +1,81 @@
+#calendario-campeonato li {
+    cursor: pointer;
+}
+#calendario-campeonato li:hover {
+    background: linear-gradient(90deg, var(--primary-green) 0%, var(--gold) 100%);
+    color: var(--dark-blue) !important;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(255,215,0,0.13);
+    transition: background 0.2s, color 0.2s;
+}
+/* Calendário do Campeonato - Estilo Profissional */
+#calendario-campeonato {
+    background: linear-gradient(135deg, rgba(26,58,95,0.92), rgba(42,77,122,0.92));
+    border-radius: 12px;
+    padding: 18px 18px 12px 18px;
+    margin-top: 18px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.13);
+    color: var(--white);
+    min-width: 180px;
+    max-width: 260px;
+}
+#calendario-campeonato h4 {
+    color: var(--gold);
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+#calendario-campeonato ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#calendario-campeonato li {
+    padding: 7px 0 7px 10px;
+    border-left: 4px solid transparent;
+    margin-bottom: 2px;
+    font-size: 1em;
+    border-radius: 6px;
+    transition: background 0.2s, border-color 0.2s;
+}
+#calendario-campeonato li {
+    background: rgba(255,255,255,0.03);
+}
+#calendario-campeonato li[style*="font-weight:700"] {
+    background: linear-gradient(90deg, var(--primary-green) 0%, var(--gold) 100%);
+    color: var(--dark-blue) !important;
+    font-weight: 800;
+    border-left: 4px solid var(--gold);
+    box-shadow: 0 2px 8px rgba(255,215,0,0.08);
+}
+#calendario-campeonato li[style*="color:#aaa;"] {
+    color: #b0b0b0 !important;
+    border-left: 4px solid var(--primary-green);
+}
+#calendario-campeonato li:not([style*="font-weight:700"]):not([style*="color:#aaa;"]){
+    color: var(--white);
+    border-left: 4px solid rgba(255,255,255,0.08);
+}
+@media (max-width: 600px) {
+    #calendario-campeonato {
+        min-width: 120px;
+        max-width: 100vw;
+        padding: 10px 4vw 8px 4vw;
+    }
+    #calendario-campeonato li {
+        font-size: 0.95em;
+        padding: 5px 0 5px 6px;
+    }
+}
+/*
+    =============================
+    CALENDÁRIO DO CAMPEONATO
+    (renderizado em #calendario-campeonato)
+    =============================
+    O estilo visual do calendário é herdado do container pai e dos estilos globais.
+    Se quiser customizar, adicione regras para #calendario-campeonato, ul, li, etc.
+*/
 /* --- Simulação de Partida: Ao Vivo e Resultados --- */
 .live-header {
     display: flex;
@@ -42,6 +120,71 @@
     font-family: 'Segoe UI', Arial, sans-serif;
     color: var(--white);
     line-height: 1.5;
+}
+
+/* Team detail card (Calendário) */
+.team-card {
+    background: linear-gradient(135deg,#0b2540 0%, #123455 100%);
+    border-radius: 12px;
+    padding: 16px;
+    color: var(--white);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+}
+.team-card .team-header {
+    display:flex;align-items:center;gap:14px;
+}
+.team-card .team-header img{width:72px;height:72px;object-fit:contain;border-radius:8px;background:#fff;padding:6px}
+.team-card .team-badges{display:flex;gap:8px;margin-left:auto}
+.badge-small{background:rgba(255,255,255,0.06);padding:6px 10px;border-radius:8px;font-weight:700;color:var(--gold);}
+.team-stats{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap}
+.stat-box{background:rgba(255,255,255,0.03);padding:10px;border-radius:8px;min-width:110px}
+.stat-box .label{font-size:0.85em;color:#cfefff}
+.stat-box .value{font-weight:800;color:#bfffc9;margin-top:6px}
+
+/* Progress bars */
+.progress{background:rgba(255,255,255,0.06);border-radius:8px;height:10px;overflow:hidden}
+.progress > i{display:block;height:100%;background:linear-gradient(90deg,var(--primary-green),var(--gold));}
+
+/* Probability meter */
+.probability {display:flex;gap:8px;align-items:center;margin-top:12px}
+.probability .bar{flex:1;height:12px;background:rgba(255,255,255,0.06);border-radius:8px;overflow:hidden}
+.probability .bar > i{height:100%;display:block;background:linear-gradient(90deg,#2ecc71,#f1c40f)}
+.probability .label{width:70px;text-align:right;font-weight:700}
+
+/* Scouting modal */
+.modal-scout-bg{position:fixed;inset:0;background:rgba(2,10,20,0.7);display:flex;align-items:center;justify-content:center;z-index:2000}
+.modal-scout{background:linear-gradient(135deg,#10293f,#0b2740);padding:20px;border-radius:12px;min-width:320px;max-width:760px;color:var(--white);box-shadow:0 12px 40px rgba(0,0,0,0.6)}
+.modal-scout h3{color:var(--gold);margin-bottom:8px}
+.modal-scout .close{position:absolute;right:18px;top:14px;background:transparent;border:none;color:#fff;font-size:1.1em}
+.btn-scout{background:linear-gradient(90deg,#ffd700,#00a650);color:#042;padding:8px 12px;border-radius:8px;font-weight:800}
+
+@media (max-width:600px){
+    .team-card .team-header img{width:56px;height:56px}
+    .stat-box{min-width:100px}
+}
+
+/* Elenco: titulares e reservas */
+.elenco-container{display:flex;gap:18px;flex-wrap:wrap}
+.elenco-box{background:linear-gradient(135deg,#0b2540,#0f3350);padding:14px;border-radius:12px;flex:1;min-width:300px;box-shadow:0 8px 24px rgba(0,0,0,0.45)}
+.elenco-box h3{color:var(--gold);margin-bottom:8px}
+.player-row{display:flex;align-items:center;gap:12px;padding:8px;border-radius:8px;margin-bottom:8px;background:rgba(255,255,255,0.02)}
+.player-row .player-name{font-weight:700;color:#e6f7ff}
+.player-row .player-pos{font-weight:700;color:#bfffc9;width:64px;text-align:center}
+.player-row .player-age{width:42px;text-align:center;color:#cfefff}
+.player-row .player-energy{flex:1;margin:0 10px}
+.energy-bar{height:10px;background:rgba(255,255,255,0.06);border-radius:8px;overflow:hidden}
+.energy-bar > i{height:100%;display:block;background:linear-gradient(90deg,#f1c40f,#2ecc71)}
+.energy-low > i{background:linear-gradient(90deg,#e74c3c,#f39c12)}
+.player-row .player-value{width:120px;text-align:right;color:#cfefff}
+.player-row .player-actions{display:flex;gap:6px}
+.elenco-acao-btn{padding:6px 8px;border-radius:6px;background:linear-gradient(145deg,var(--primary-green),var(--dark-green));color:#fff;border:none;font-weight:700;cursor:pointer}
+.elenco-acao-btn.secondary{background:linear-gradient(145deg,var(--light-blue),var(--medium-blue))}
+.substitute-popup{position:absolute;background:#071622;border:1px solid rgba(255,255,255,0.06);padding:8px;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,0.6);z-index:1500;min-width:220px}
+.substitute-popup .sub-row{display:flex;justify-content:space-between;padding:6px;border-radius:6px;margin-bottom:6px;background:rgba(255,255,255,0.02)}
+.substitute-popup .sub-row:last-child{margin-bottom:0}
+
+@media (max-width:800px){
+    .elenco-container{flex-direction:column}
 }
 
 @media (max-width: 768px) {
